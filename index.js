@@ -10,7 +10,7 @@ inquirer
     {
         type: 'input',
         name: 'Username',
-        message: 'What is your username?',
+        message: 'What is your Github username?',
     },
     {
         type: 'input',
@@ -47,13 +47,29 @@ inquirer
         name: 'License',
         message: 'What license would you like to use?',
         choices: ['MIT license', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'],
-        type: 'input',
     }
 ])
-// .then(({Username, Title, Description, Installation, Usage, Contributions, Test, License}) => {
-//     return writeToFile("README.md", html);
-// })
-
+.then(({Username, Title, Description, Installation, Usage, Contributions, Test, License}) => {
+const READMETemplate = 
+`
+## ${Title}
+## Description:
+    ${Description}
+## Installation
+    ${Installation}
+## Contributing:
+    ${Contributions}
+## Test
+    ${Test}
+## Questions
+${Username}
+## License
+${License}
+`
+return writeGeneratorFile("README.md", READMETemplate);
+})
+.then(() => console.log("README created"))
+.catch((err) => console.log(err));
 
 // function to initialize program
 // function init() {
