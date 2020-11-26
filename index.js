@@ -4,7 +4,7 @@ const util = require('util')
 
 const writeGeneratorFile = util.promisify(fs.writeFile);
 
-// questions for user
+// asks users questions
 inquirer
     .prompt([   
     {
@@ -59,36 +59,30 @@ inquirer
         choices: ['MIT license', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'],
     }
 ])
+// then adds the inputs to the general template
+
 .then(({Username, Email, Repo, Title, Description, Installation, Usage, Contributions, Test, License}) => {
 const READMETemplate = 
 `
-## ${Title}
+# ${Title}
 ## Description:
-    ${Description}
+${Description}
 ## Installation
-    To install the dependencies, please run the following command:
-    ${Installation}
+To install the dependencies, please run the following command:
+${Installation}
 ## Contributing:
-    The best way to participate in my portfolio is to Lastly, you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
-    Additional contributions include:
-    ${Contributions}
+The best way to participate in my portfolio is to Lastly, you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
+Additional contributions include:
+${Contributions}
 ## Test
-    To run a test, please run the following command:
-    ${Test}
+To run a test, please run the following command:
+${Test}
 ## Questions
-    The best way to get a hold of me is through my [email](${Email}). You can also [submit a bug](https://github.com/${Username}/${Repo}/issues), or you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. 
+The best way to get a hold of me is through my [email](${Email}). You can also [submit a bug](https://github.com/${Username}/${Repo}/issues), or you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. 
 ## License
-    This project is licensed under ${License}
+This project is licensed under ${License}
 `
 return writeGeneratorFile("README.md", READMETemplate);
 })
 .then(() => console.log("README created"))
 .catch((err) => console.log(err));
-
-// function to initialize program
-// function init() {
-
-// }
-
-// function call to initialize program
-// init();
