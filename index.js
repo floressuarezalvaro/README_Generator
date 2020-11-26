@@ -20,7 +20,7 @@ inquirer
     {
         type: 'input',
         name: 'Repo',
-        message: 'What is the repository for this project?',
+        message: 'What is the repository for this project? (Do not include any spaces)',
     },
     {
         type: 'input',
@@ -76,7 +76,7 @@ const READMETemplate =
     To run a test, please run the following command:
     ${Test}
 ## Questions
-    The best way to get a hold of me is through my [email](${Email}). [submit a bug](https://github.com/${Username}/${Repo}/issues). Additionally, you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. 
+    The best way to get a hold of me is through my [email](${Email}). You can also [submit a bug](https://github.com/${Username}/${Repo}/issues), or you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. 
 ## License
     This project is licensed under ${License}
 `
