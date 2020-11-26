@@ -14,6 +14,11 @@ inquirer
     },
     {
         type: 'input',
+        name: 'Repo',
+        message: 'What is the repository for this project?',
+    },
+    {
+        type: 'input',
         name: 'Title',
         message: 'What is your project title?',
     },
@@ -49,22 +54,25 @@ inquirer
         choices: ['MIT license', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'],
     }
 ])
-.then(({Username, Title, Description, Installation, Usage, Contributions, Test, License}) => {
+.then(({Username, Repo, Title, Description, Installation, Usage, Contributions, Test, License}) => {
 const READMETemplate = 
 `
 ## ${Title}
 ## Description:
     ${Description}
 ## Installation
+    To install the dependencies, please run the following command:
     ${Installation}
 ## Contributing:
+    The best way to participate in my portfolio is to [submit a bug](https://github.com/${Username}/${Repo}/issues). Additionally, you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. Lastly, you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
+    Additional contributions include:
     ${Contributions}
 ## Test
     ${Test}
 ## Questions
-${Username}
+    ${Username}
 ## License
-${License}
+    This project is licensed under ${License}
 `
 return writeGeneratorFile("README.md", READMETemplate);
 })
