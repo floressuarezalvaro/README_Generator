@@ -14,6 +14,11 @@ inquirer
     },
     {
         type: 'input',
+        name: 'Email',
+        message: 'What is your email?',
+    },
+    {
+        type: 'input',
         name: 'Repo',
         message: 'What is the repository for this project?',
     },
@@ -30,7 +35,7 @@ inquirer
     {
         type: 'input',
         name: 'Installation',
-        message: 'How do I install your project?',
+        message: 'What command do I run to install your project?',
     },
     {
         type: 'input',
@@ -54,7 +59,7 @@ inquirer
         choices: ['MIT license', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'],
     }
 ])
-.then(({Username, Repo, Title, Description, Installation, Usage, Contributions, Test, License}) => {
+.then(({Username, Email, Repo, Title, Description, Installation, Usage, Contributions, Test, License}) => {
 const READMETemplate = 
 `
 ## ${Title}
@@ -64,13 +69,14 @@ const READMETemplate =
     To install the dependencies, please run the following command:
     ${Installation}
 ## Contributing:
-    The best way to participate in my portfolio is to [submit a bug](https://github.com/${Username}/${Repo}/issues). Additionally, you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. Lastly, you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
+    The best way to participate in my portfolio is to Lastly, you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
     Additional contributions include:
     ${Contributions}
 ## Test
+    To run a test, please run the following command:
     ${Test}
 ## Questions
-    ${Username}
+    The best way to get a hold of me is through my [email](${Email}). [submit a bug](https://github.com/${Username}/${Repo}/issues). Additionally, you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. 
 ## License
     This project is licensed under ${License}
 `
