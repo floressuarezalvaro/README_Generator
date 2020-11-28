@@ -35,7 +35,7 @@ inquirer
     {
         type: 'input',
         name: 'Installation',
-        message: 'What command do I run to install your project?',
+        message: 'What command do I run to install dependencies?',
     },
     {
         type: 'input',
@@ -56,29 +56,37 @@ inquirer
         type: 'checkbox',
         name: 'License',
         message: 'What license would you like to use?',
-        choices: ['MIT license', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'],
+        choices: ['MIT', 'Apache_2.0', 'GNU_GPL_V3', 'None'],
     }
 ])
-// then adds the inputs to the general template
-
 .then(({Username, Email, Repo, Title, Description, Installation, Usage, Contributions, Test, License}) => {
+
 const READMETemplate = 
 `
+![License](https://img.shields.io/badge/License-${License}-green.svg)
+
 # ${Title}
+
 ## Description:
 ${Description}
+
 ## Installation
 To install the dependencies, please run the following command:
 ${Installation}
+
 ## Contributing:
-The best way to participate in my portfolio is to Lastly, you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
+To contribute you can [build from the source itself](https://github.com/${Username}/${Repo}/wiki).
+
 Additional contributions include:
 ${Contributions}
+
 ## Test
 To run a test, please run the following command:
 ${Test}
+
 ## Questions
 The best way to get a hold of me is through my ${Email}. You can also [submit a bug](https://github.com/${Username}/${Repo}/issues), or you can review the [source code](https://github.com/${Username}/${Repo}/pulls) changes. 
+
 ## License
 This project is licensed under ${License}
 `
