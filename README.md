@@ -5,7 +5,7 @@
 ## Description:
 This repository provides the landing page for my README Generator. 
 
-Please click the link here to open the [README Generator](https://floressuarezalvaro.github.io/README_Generator/). Here is also the link to my [repository](https://github.com/floressuarezalvaro/README_Generator). Below is a video of how my README Generator works. Due to the length of my gif, I was not able to make this image larger. 
+Please click the link here to open the [README Generator](https://floressuarezalvaro.github.io/README_Generator/). Here is also the link to my [repository](https://github.com/floressuarezalvaro/README_Generator). Below is a video of how my README Generator works. Due to the length of my gif, I was not able to make the dimensions larger. 
 
 ![README Recording](./Assets/READMERecording.gif)
 
