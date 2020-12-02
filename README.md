@@ -17,8 +17,8 @@ nmp install
 ## Contributing:
 To contribute you can [build from the source itself](https://github.com/floressuarezalvaro/README_Generator/wiki).
 
-## Questions
-The best way to get a hold of me is through my floressuarezalvaro@gmail.com. You can also [submit a bug](https://github.com/floressuarezalvaro/README_Generator/issues), or you can review the [source code](https://github.com/floressuarezalvaro/README_Generator/pulls) changes. 
+## Questions:
+The best way to get a hold of me via email, at floressuarezalvaro@gmail.com. You can also [submit a bug](https://github.com/floressuarezalvaro/README_Generator/issues), or you can review the [source code](https://github.com/floressuarezalvaro/README_Generator/pulls) changes. 
 
 ## MIT License
 
