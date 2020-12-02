@@ -4,7 +4,6 @@ const util = require('util')
 
 const writeGeneratorFile = util.promisify(fs.writeFile);
 
-// asks users questions
 inquirer
     .prompt([   
     {
